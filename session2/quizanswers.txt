@@ -7,6 +7,7 @@ quiz 2.6
 0
 Adds item at the end
 {name: “John”}
+
 Quiz 2.7
 Html element with the id title
 button.addEventListener()
