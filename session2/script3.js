@@ -27,10 +27,10 @@ console.log(h3s.length);
 //h3 text at index 6 should be red
 
 for (let i = 0; i < h3s.length; i++) {
-	h3s[i].style.color = "blue";
-	if (i === 2) h3s[i].style.color = "green";
-	if (i === 4) h3s[i].style.color = "yellow";
-	if (i === 6) h3s[i].style.color = "red";
+  h3s[i].style.color = "blue";
+  if (i === 2) h3s[i].style.color = "green";
+  if (i === 4) h3s[i].style.color = "yellow";
+  if (i === 6) h3s[i].style.color = "red";
 }
 
 // document.querySelector - targets one element
@@ -45,22 +45,50 @@ let btnChange = document.getElementById("btnChange");
 
 let para = document.getElementById("para");
 let hidePara = document.getElementById("hidePara");
+let showPara = document.getElementById("showPara");
+let count = 0;
+showPara.style.display = "none"; //hide the showPara button
 
 //addEventListener('event', function() {})
 btnChange.addEventListener("click", function () {
-	orig.textContent = "The text has been changed!";
+  if (count == 1) {
+    orig.textContent = "Original Text";
+    count = 0;
+  } else {
+    orig.textContent = "The text has been changed!";
+    count = 1;
+  }
 });
 
+// change the color of paragraph every mouseover
 para.addEventListener("mouseover", function () {
-	para.style.color = "blue";
+  if (para.style.color != "blue") {
+    para.style.color = "blue";
+  } else {
+    para.style.color = "black";
+  }
 });
 
+// //HOW TO SHOW THE P TAG AGAIN BY CREATING ANOTHER BUTTON
+// hidePara.addEventListener("click", function () {
+//   para.style.display = "none";
+//   showPara.style.display = "inline"; //show the showPara button when the hidePara button is clicked
+// });
+
+// showPara.addEventListener("click", function () {
+//   para.style.display = "block"; //show the paragraph again
+//   showPara.style.display = "none"; //hide the showPara button when the paragraph is shown
+// });
+
+// HOW TO SHOW THE P TAG AGAIN BY USING THE SAME BUTTON - self created
 hidePara.addEventListener("click", function () {
-	para.style.display = "none";
+  para.style.display = "none";
+  showPara.style.display = "inline";
+  hidePara.style.display = "none";
 });
 
-// HOW TO SHOW THE P TAG AGAIN BY CREATING ANOTHER BUTTON
-
-// MORE CHALLENGING
-
-// HOW TO DISPLAY THE P TAG AGAIN USING THE SAME BUTTON.
+showPara.addEventListener("click", function () {
+  para.style.display = "block";
+  showPara.style.display = "none";
+  hidePara.style.display = "inline";
+});

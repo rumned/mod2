@@ -3,17 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Interactive Tip Calculator</title>
+    <style>
+      .container {
+        width: 300px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+
+      input,
+      button {
+        width: 100%;
+        padding: 8px;
+        margin: 0px 0px;
+      }
+    </style>
   </head>
   <body>
-    <h2>Tip Calculator</h2>
-    <label>Bill Amount (RM): </label>
-    <input type="number" id="billInput" />
+    <div class="container">
+      <h2>Tip Calculator</h2>
+      <label>Bill Amount (RM): </label>
+      <input type="text" id="billInput" />
+      <!--validation is necessary here to ensure user enters valid numbers, this is handled in JS script-->
 
-    <label>Tip Percentage(%):</label>
-    <input type="number" id="tipInput" />
+      <label>Tip Percentage(%):</label>
+      <input type="number" id="tipInput" />
 
-    <button id="calculateBtn" id
+      <button id="calculateBtn">Calculate</button>
+      <p id="result"></p>
+    </div>
 
     <script src="script4.js"></script>
   </body>
